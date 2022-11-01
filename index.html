@@ -10,6 +10,8 @@
 <body>
     <div id="app">
         {{ nextYear('안녕하세요') }}
+        <input :type="type" :value="inputData">
+        <a :href="getGitLink('ShinSucheol/BasicVue')">수철 깃</a>
     </div>
     <script>
         new Vue({
@@ -18,9 +20,15 @@
                 person: {
                     name: '신 수철',
                     age: 25,
-                }
+                },
+                inputData: 'hello',
+                type: 'number',
+                link: 'https://github.com/',
             },
             methods: {
+                getGitLink(git) {
+                    return this.link + git;
+                },
                 nextYear(greeting) {
                     return greeting + '! ' + this.person.name +  '은 내년에 ' + (this.person.age + 1) + '살 입니다';
                 },
