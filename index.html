@@ -9,38 +9,25 @@
 </head>
 <body>
     <div id="app">
-        <form v-on:submit.prevent="submit">
-            <!-- <input type="text" :value="text" @keyup="updateText"> -->
-            <input type="text" v-model="text">
-            <br>{{ text }}
-            <br><button type="submit">Submit</button>
-        </form>
-        <!-- {{ year }}
-        <br><button v-on:click="plus">더하기</button>
-        <button v-on:click="minus">빼기</button> -->
+        {{ reverseMessage }}
+        <button @click="changeMessage">Click</button>
     </div>
     <script>
         new Vue({
             el: '#app',
             data: {
-                year: 2022,
-                text: 'text',
+                message: '헬로우',
             },
             methods: {
-                plus() {
-                    this.year++;
-                },
-                minus() {
-                    this.year--;
-                },
-                submit() {
-                    alert('submitted');
-                    console.log('hello');
-                },
-                // updateText(event) {
-                //     this.text = event.target.value;
-                // },
+                changeMessage() {
+                    this.message = '신수철';
+                }
             },
+            computed: {
+                reverseMessage() {
+                    return this.message.split('').reverse().join('');
+                }
+            }
         })
     </script>
 </body>
