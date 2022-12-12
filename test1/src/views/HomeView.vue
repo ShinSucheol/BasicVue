@@ -1,23 +1,30 @@
 <template>
   <div>
     <h1>This is Home page</h1>
-    <ShinCoder title="Home title" name="Shin Coder"/>
+    <form action="">
+      <InputField v-model="name" />
+      <br><button>Submit</button>
+    </form>
+    {{ name }}
   </div>
 </template>
 
 <script>
-import ShinCoder from '@/components/ShinCoder.vue';
-
+import InputField from '@/components/InputField.vue';
 export default {
   components: {
-    ShinCoder
+    InputField
   },
-
   data() {
     return {
-      name: 'Shin Coder'
+      name: ''
     }
-  }
+  },
+  // methods: {
+  //   updateName(name) {
+  //     this.name = name;
+  //   }
+  // }
 }
 </script>
 
