@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>This is Home page</h1>
-    <ShinCoder />
+    <ShinCoder title="Home title" name="Shin Coder"/>
   </div>
 </template>
 
